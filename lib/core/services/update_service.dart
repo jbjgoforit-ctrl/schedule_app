@@ -11,7 +11,7 @@ class UpdateInfo {
 }
 
 class UpdateService {
-  static const String _updateUrl = 'https://raw.githubusercontent.com/jbjgoforit-ctrl/schedule_app/main/update.json';
+  static const String _updateUrl = 'https://cdn.jsdelivr.net/gh/jbjgoforit-ctrl/schedule_app@main/update.json';
 
   static Future<UpdateInfo?> checkUpdate() async {
     final dio = Dio(BaseOptions(connectTimeout: const Duration(seconds: 10)));
