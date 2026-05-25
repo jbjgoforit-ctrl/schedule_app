@@ -1,0 +1,6 @@
+{
+  "version": "1.0.2",
+  "versionCode": 3,
+  "changelog": "- 修复皮肤切换卡死\n- 设置页中英双语\n- 动态渐变背景主题\n- 新增日期显示在星期上方\n- 左右滑动切周",
+  "url": "https://github.com/jbjgoforit-ctrl/schedule_app/releases/download/v1.0.2/app-debug.apk"
+}

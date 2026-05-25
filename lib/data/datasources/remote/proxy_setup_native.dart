@@ -1,0 +1,2 @@
+import 'dart:io';import 'package:dio/dio.dart';import 'package:dio/io.dart';import 'jw_login_service.dart';
+void setupProxy(Dio dio,ProxyConfig proxy){final c=HttpClient();c.findProxy=(uri)=>'PROXY ${proxy.host}:${proxy.port}';if(proxy.username!=null&&proxy.username!.isNotEmpty){c.addProxyCredentials(proxy.host,proxy.port,'',HttpClientBasicCredentials(proxy.username!,proxy.password??''));}dio.httpClientAdapter=IOHttpClientAdapter(createHttpClient:()=>c);}

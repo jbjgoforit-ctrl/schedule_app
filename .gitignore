@@ -1,0 +1,12 @@
+build/
+.dart_tool/
+.gradle/
+*.apk
+*.jks
+*.keystore
+local.properties
+*.hprof
+*.hprof
+build/
+.dart_tool/
+*.apk

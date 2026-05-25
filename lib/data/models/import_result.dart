@@ -1,0 +1,2 @@
+import 'course.dart';
+class ImportResult{final bool success;final List<Course> courses;final String message;final int duplicateCount;const ImportResult({required this.success,this.courses=const[],this.message='',this.duplicateCount=0});factory ImportResult.success(List<Course> c,{int d=0})=>ImportResult(success:true,courses:c,duplicateCount:d,message:'成功导入${c.length}门课程${d>0?'，$d门重复跳过':''}');factory ImportResult.failure(String m)=>ImportResult(success:false,message:m);}
