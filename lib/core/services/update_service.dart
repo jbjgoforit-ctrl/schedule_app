@@ -14,14 +14,12 @@ class UpdateService {
   static const String _updateUrl = 'https://raw.githubusercontent.com/jbjgoforit-ctrl/schedule_app/main/update.json';
 
   static Future<UpdateInfo?> checkUpdate() async {
-    try {
-      final dio = Dio(BaseOptions(connectTimeout: const Duration(seconds: 10)));
-      final resp = await dio.get(_updateUrl);
-      if (resp.statusCode == 200) {
-        final info = UpdateInfo.fromJson(resp.data);
-        if (info.versionCode > 1) return info; // Compare with current versionCode
-      }
-    } catch (_) {}
+    final dio = Dio(BaseOptions(connectTimeout: const Duration(seconds: 10)));
+    final resp = await dio.get(_updateUrl);
+    if (resp.statusCode == 200) {
+      final info = UpdateInfo.fromJson(resp.data);
+      if (info.versionCode > 1) return info;
+    }
     return null;
   }
 

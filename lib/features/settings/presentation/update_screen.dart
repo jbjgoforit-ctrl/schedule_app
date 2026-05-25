@@ -15,12 +15,12 @@ class _UpdateScreenState extends State<UpdateScreen> {
 
   @override void initState() {super.initState();_check();}
   Future<void> _check() async {
-    setState(() {_checking = true;_error = null;});
+    setState(() {_checking = true;_error = null;_info = null;});
     try {
       final info = await UpdateService.checkUpdate();
       setState(() {_info = info;_checking = false;});
     } catch (e) {
-      setState(() {_error = '检查更新失败';_checking = false;});
+      setState(() {_error = '网络连接失败，请检查网络后重试';_checking = false;});
     }
   }
 
